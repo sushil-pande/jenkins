@@ -1,16 +1,13 @@
 pipeline
 {
-    agent
-    {
-        label "any"
-    }
+    agent any
     stages
     {
         parallel
         {
             stage("A")
             {
-                agent "aws"
+                agent aws
                 steps
                 {
                     echo "========executing A========"
@@ -19,14 +16,14 @@ pipeline
             stage("C")
             {
                 steps
-                agent "aws"
+                agent aws
                 {
                     echo "====++++executing C++++===="
                 }
             }
             stage("D")
             {
-                label "aws"
+                agent aws
                 steps
                 {
                     echo "====++++executing D++++===="
