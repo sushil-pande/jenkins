@@ -7,7 +7,7 @@ pipeline
         {
             stage("A")
             {
-                agent aws
+                agent {label: "aws"}
                 steps
                 {
                     echo "========executing A========"
@@ -16,14 +16,14 @@ pipeline
             stage("C")
             {
                 steps
-                agent aws
+                agent {label: "aws"}
                 {
                     echo "====++++executing C++++===="
                 }
             }
             stage("D")
             {
-                agent aws
+                agent {label: "aws"}
                 steps
                 {
                     echo "====++++executing D++++===="
